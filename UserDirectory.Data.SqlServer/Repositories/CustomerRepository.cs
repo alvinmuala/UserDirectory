@@ -46,12 +46,12 @@ namespace UserDirectory.Data.SqlServer.Repositories
             }
             catch (DbUpdateException e)
             {
-                _logger.LogError(e.Message);
+                _logger.LogError($"An error occured while adding a {customer} entity ", e.Message);
                 throw;
             }
 
         }
-        public async Task<Customer> Update(int id, Customer item)
+        public async Task<Customer> Update(int id, Customer customer)
         {
             var exisitingCustomer = _storage.Customers.FirstOrDefault(_ => _.Id == id);
 
@@ -60,14 +60,14 @@ namespace UserDirectory.Data.SqlServer.Repositories
 
             try
             {
-                _storage.Update(item);
+                _storage.Update(customer);
                 await _storage.SaveChangesAsync();
 
-                return item;
+                return customer;
             }
             catch (DbUpdateException e)
             {
-                _logger.LogError(e.Message);
+                _logger.LogError($"An error occured while updating a {customer} entity ", e.Message);
                 throw;
             }
         }
