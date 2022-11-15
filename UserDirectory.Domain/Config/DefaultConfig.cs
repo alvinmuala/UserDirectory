@@ -34,6 +34,7 @@ namespace UserDirectory.Domain.Config
                         Id = i++,
                         FirstName = _.first_name,
                         LastName = _.last_name,
+                        DateOfBirth = _.date_of_birth,
                         EmailAddress = _.email_address,
                         Address = _.address,
                         City = _.city,

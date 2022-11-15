@@ -22,6 +22,9 @@ namespace UserDirectory.Data.SqlServer.Config
             builder.Property(c => c.LastName)
               .HasColumnType("varchar(max)");
 
+            builder.Property(c => c.DateOfBirth)
+                .HasColumnType("varchar(max)");
+
             builder.Property(c => c.EmailAddress)
              .HasColumnType("varchar(max)");
 
