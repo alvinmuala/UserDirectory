@@ -1,0 +1,40 @@
+<div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
+  <h1>User Directory</h1>
+
+
+  <div class="mh-500px w-100 overflow-auto d-inline-block mt-5 shadow">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Date Of Birth</th>
+          <th scope="col">Email Address</th>
+          <th scope="col">Address</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+          <th scope="col">Zip Code</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of postService.allPosts; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.dateOfBirth }}</td>
+        <td>{{ item.emailAddress }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.zipCode }}</td>
+        <td>
+          <button class="btn btn-lg btn-dark me-3">
+            View
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
