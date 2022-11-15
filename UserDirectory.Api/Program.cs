@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using UserDirectory.Data.SqlServer;
 using UserDirectory.Data.SqlServer.Repositories;
 using UserDirectory.Domain.Contracts.Repositories;
+using UserDirectory.Domain.Contracts.Services;
+using UserDirectory.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,7 @@ builder.Services.AddSwaggerGen();
 // DI
 
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 var app = builder.Build();
 
