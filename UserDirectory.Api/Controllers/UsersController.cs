@@ -24,7 +24,7 @@ namespace UserDirectory.Api.Controllers
         {
             var result = await _customerService.GetCustomersAsync();
 
-            return Ok(result.ToList());
+            return Ok(result);
         }
     }
 }
