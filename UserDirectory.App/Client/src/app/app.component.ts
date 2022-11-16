@@ -14,6 +14,9 @@ import { PostService } from './services/post.service';
 export class AppComponent implements OnInit{
   title = 'Client';
 
+  searchTerm = '';
+  term = '';
+
   modalOptions: NgbModalOptions = {
     size: 'lg'
   }
